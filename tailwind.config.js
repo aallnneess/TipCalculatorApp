@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{html,ts}"
   ],
   theme: {
+    screens: {
+      'md': '900px'
+    },
     colors: {
       Strong_cyan: 'hsl(172, 67%, 45%)',
       Very_dark_cyan: 'hsl(183, 100%, 15%)',
