@@ -26,11 +26,15 @@
     </div>
 
     <!-- Number of People Text -->
-    <p class="mt-10 text-base text-Dark_grayish_cyan md:mt-6">Number of People</p>
+    <div class="flex justify-between">
+      <p class="mt-10 text-base text-Dark_grayish_cyan md:mt-6">Number of People</p>
+      <p *ngIf="numberofpeople.value == '0'" class="mt-10 text-base text-Orange md:mt-6">Can't be zero</p>
+    </div>
+
 
     <!-- Number of People Input Box -->
     <div class="relative mt-2">
-      <input #numberofpeople (input)="numberOfPeople = +numberofpeople.value" class="p-2 text-right text-Very_dark_cyan w-full bg-Very_light_grayish_cyan rounded-md focus:text-Very_dark_cyan focus:outline-Strong_cyan hover:outline hover:outline-2 hover:outline-Strong_cyan" placeholder="0">
+      <input #numberofpeople (input)="numberOfPeople = +numberofpeople.value" [ngClass]="numberofpeople.value == '0' ? 'focus:outline focus:outline-2 focus:outline-Orange outline outline-2 outline-Orange' : ''" class="p-2 text-right text-Very_dark_cyan w-full bg-Very_light_grayish_cyan rounded-md focus:text-Very_dark_cyan focus:outline-Strong_cyan hover:outline hover:outline-2 hover:outline-Strong_cyan" placeholder="0">
       <img class="absolute top-4 left-4" src="assets/images/icon-person.svg" alt="doller icon">
     </div>
 

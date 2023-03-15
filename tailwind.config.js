@@ -14,7 +14,8 @@ module.exports = {
       Grayish_cyan: 'hsl(184, 14%, 56%)',
       Light_grayish_cyan: 'hsl(185, 41%, 84%)',
       Very_light_grayish_cyan: 'hsl(189, 41%, 97%)',
-      White: 'hsl(0, 0%, 100%)'
+      White: 'hsl(0, 0%, 100%)',
+      Orange: '#f97316'
     },
     fontFamily: {
       'sans': ['"Space Mono"', 'monospace']
