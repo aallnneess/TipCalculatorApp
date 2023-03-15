@@ -8,22 +8,22 @@
   </div>
 
    <!--- Calc-Box -->
-  <div class="flex flex-col justify-center p-6 min-h-full w-full rounded-t-3xl bg-White md:flex-row md:rounded-3xl md:w-fit min-h-0">
+  <div class="flex flex-col justify-center p-6 min-h-full w-full rounded-t-3xl bg-White md:flex-row md:rounded-3xl md:w-fit min-h-0 md:p-9">
 
     <section class="md:mr-6">
       <!-- Bill Text -->
       <p class="mt-2 mb-1 text-base text-Dark_grayish_cyan">Bill</p>
 
       <!-- Input Box -->
-      <div class="relative mb-8">
+      <div class="relative mb-8 md:mb-11">
         <input class="p-2 text-right w-full bg-Very_light_grayish_cyan rounded-md focus:outline-Strong_cyan hover:outline hover:outline-2 hover:outline-Strong_cyan" [value]="" placeholder="0">
         <img class="absolute top-4 left-4" src="assets/images/icon-dollar.svg" alt="doller icon">
       </div>
 
       <!-- Grid Select Tip Box -->
       <div class="flex flex-col justify-center text-White">
-        <span class="text-base mb-6 text-Dark_grayish_cyan">Select Tip %</span>
-        <div class="grid grid-cols-2 gap-4 place-content-center h-40 w-full md:grid-cols-3 md:w-96">
+        <span class="text-base mb-6 text-Dark_grayish_cyan md:mb-0">Select Tip %</span>
+        <div class="grid grid-cols-2 gap-4 place-content-center h-40 w-full md:grid-cols-3 md:w-96 md:h-36">
           <button class="flex justify-center py-2 items-center rounded-md bg-Very_dark_cyan hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">5%</button>
           <button class="flex justify-center py-2 items-center rounded-md bg-Very_dark_cyan hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">10%</button>
           <button class="flex justify-center py-2 items-center rounded-md bg-Very_dark_cyan hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">15%</button>
@@ -35,7 +35,7 @@
       </div>
 
       <!-- Number of People Text -->
-      <p class="mt-10 text-base text-Dark_grayish_cyan">Number of People</p>
+      <p class="mt-10 text-base text-Dark_grayish_cyan md:mt-6">Number of People</p>
 
       <!-- Number of People Input Box -->
       <div class="relative mt-2">
@@ -46,11 +46,11 @@
     </section>
 
     <!-- Final Box -->
-    <div class="flex flex-col mt-6 p-10 space-y-8 justify-center bg-Very_dark_cyan rounded-xl md:mt-0 md:justify-between md:w-96">
+    <div class="flex flex-col mt-6 p-10 space-y-8 justify-center bg-Very_dark_cyan rounded-xl md:mt-0 md:justify-between md:w-96 md:p-10 md:space-y-[132px]">
 
-      <div class="space-y-8">
+      <div class="space-y-8 md:mt-3 md:space-y-12">
         <!-- Tip Amount Section -->
-        <div class="flex justify-between text-Strong_cyan">
+        <div class="flex justify-between items-center text-Strong_cyan">
 
           <div>
             <h2 class="text-sm text-White">Tip Amount</h2>
@@ -59,13 +59,13 @@
 
           <!-- Price per Person -->
           <div>
-            <h1>$4.27</h1>
+            <h1 class="md:text-5xl">$4.27</h1>
           </div>
 
         </div>
 
         <!-- Total Section -->
-        <div class="flex justify-between text-Strong_cyan">
+        <div class="flex justify-between items-center text-Strong_cyan">
 
           <div>
             <h2 class="text-sm text-White">Total</h2>
@@ -74,7 +74,7 @@
 
           <!-- Total Price -->
           <div>
-            <h1>$32.97</h1>
+            <h1 class="md:text-5xl">$32.97</h1>
           </div>
 
         </div>
