@@ -1,0 +1,83 @@
+<!--- Calc-Box -->
+<div class="flex flex-col justify-center p-6 min-h-full w-full rounded-t-3xl bg-White md:flex-row md:rounded-3xl md:w-fit min-h-0 md:p-9">
+
+  <section class="md:mr-6">
+    <!-- Bill Text -->
+    <p class="mt-2 mb-1 text-base text-Dark_grayish_cyan">Bill</p>
+
+    <!-- Input Box -->
+    <div class="relative mb-8 md:mb-11">
+      <input #billInput (input)="bill = +billInput.value" class="p-2 text-right text-Very_dark_cyan w-full bg-Very_light_grayish_cyan rounded-md focus:outline-Strong_cyan hover:outline hover:outline-2 hover:outline-Strong_cyan" placeholder="0">
+      <img class="absolute top-4 left-4" src="assets/images/icon-dollar.svg" alt="doller icon">
+    </div>
+
+    <!-- Grid Select Tip Box -->
+    <div class="flex flex-col justify-center text-White">
+      <span class="text-base mb-6 text-Dark_grayish_cyan md:mb-0">Select Tip %</span>
+      <div class="grid grid-cols-2 gap-4 place-content-center h-40 w-full md:grid-cols-3 md:w-96 md:h-36">
+        <button (click)="setTip(5,custom)" [ngClass]="tip == 5 ? 'bg-Strong_cyan text-Very_dark_cyan' : 'bg-Very_dark_cyan'" class="flex justify-center py-2 items-center rounded-md hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">5%</button>
+        <button (click)="setTip(10,custom)" [ngClass]="tip == 10 ? 'bg-Strong_cyan text-Very_dark_cyan' : 'bg-Very_dark_cyan'" class="flex justify-center py-2 items-center rounded-md hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">10%</button>
+        <button (click)="setTip(15,custom)" [ngClass]="tip == 15 ? 'bg-Strong_cyan text-Very_dark_cyan' : 'bg-Very_dark_cyan'" class="flex justify-center py-2 items-center rounded-md hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">15%</button>
+        <button (click)="setTip(25,custom)" [ngClass]="tip == 25 ? 'bg-Strong_cyan text-Very_dark_cyan' : 'bg-Very_dark_cyan'" class="flex justify-center py-2 items-center rounded-md hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">25%</button>
+        <button (click)="setTip(50,custom)" [ngClass]="tip == 50 ? 'bg-Strong_cyan text-Very_dark_cyan' : 'bg-Very_dark_cyan'" class="flex justify-center py-2 items-center rounded-md hover:bg-Light_grayish_cyan hover:text-Very_dark_cyan focus:bg-Strong_cyan focus:text-Very_dark_cyan">50%</button>
+
+        <input #custom placeholder="Custom" (input)="tip = +custom.value" class="flex justify-center text-center text-Very_dark_cyan items-center rounded-md text-Dark_grayish_cyan bg-Very_light_grayish_cyan focus:outline-Strong_cyan focus:text-Very_dark_cyan hover:outline hover:outline-2 hover:outline-Strong_cyan">
+      </div>
+    </div>
+
+    <!-- Number of People Text -->
+    <p class="mt-10 text-base text-Dark_grayish_cyan md:mt-6">Number of People</p>
+
+    <!-- Number of People Input Box -->
+    <div class="relative mt-2">
+      <input #numberofpeople (input)="numberOfPeople = +numberofpeople.value" class="p-2 text-right text-Very_dark_cyan w-full bg-Very_light_grayish_cyan rounded-md focus:text-Very_dark_cyan focus:outline-Strong_cyan hover:outline hover:outline-2 hover:outline-Strong_cyan" placeholder="0">
+      <img class="absolute top-4 left-4" src="assets/images/icon-person.svg" alt="doller icon">
+    </div>
+
+  </section>
+
+  <!-- Final Box -->
+  <div class="flex flex-col mt-6 p-10 space-y-8 justify-center bg-Very_dark_cyan rounded-xl md:mt-0 md:justify-between md:w-96 md:p-10 md:space-y-[132px]">
+
+    <div class="space-y-8 md:mt-3 md:space-y-12">
+      <!-- Tip Amount Section -->
+      <div class="flex justify-between items-center text-Strong_cyan">
+
+        <div>
+          <h2 class="text-sm text-White">Tip Amount</h2>
+          <p class="text-xs text-Grayish_cyan">/ person</p>
+        </div>
+
+        <!-- Price per Person -->
+        <div>
+          <h1 class="md:text-5xl">${{calculateTipPerson() |number: '1.2-2'}}</h1>
+        </div>
+
+      </div>
+
+      <!-- Total Section -->
+      <div class="flex justify-between items-center text-Strong_cyan">
+
+        <div>
+          <h2 class="text-sm text-White">Total</h2>
+          <p class="text-xs text-Grayish_cyan">/ person</p>
+        </div>
+
+        <!-- Total Price -->
+        <div>
+          <h1 class="md:text-5xl">${{calculateTotal() |number: '1.2-2'}}</h1>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Reset Button -->
+    <button (click)="reset(billInput, custom, numberofpeople)" class="p-2 rounded-md text-Very_dark_cyan bg-Strong_cyan hover:bg-Light_grayish_cyan">RESET</button>
+
+
+
+  </div>
+
+
+</div>
